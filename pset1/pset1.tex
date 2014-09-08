@@ -1,0 +1,102 @@
+\documentclass[10pt]{amsart}
+
+\textwidth=15.5cm \oddsidemargin=0.5cm
+\evensidemargin=0.5cm
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+%\usepackage{fc}
+\usepackage{pifont}
+
+\title{Math 124, Problem Set 1}
+
+\begin{document}
+
+\maketitle
+
+\noindent {\bf Due: 12:00PM, September 12, 2014.}\\
+\noindent {\bf Note:} Collaboration is permitted and encouraged. We only ask that you write up your solutions independently, and list your collaborators on your problem sets. Hard copies typed in \TeX\  are preferred. Please separate your submissions as indicated below.
+
+\section*{For Hirsh Jain}
+
+\noindent The Euclidean algorithm is possible in the integers $\mathbb{Z}$ because they form a \emph{Euclidean domain}. Other examples include the Gaussian integers $\mathbb{Z}[i] = \{a + bi \mid a,b \in \mathbb{Z}\}$ and the (ring of) polynomials with rational coefficients $\mathbb{Q}[X]$. 
+
+\medskip
+
+{\bf 1.)} Use the Euclidean algorithm to find $\gcd(3058011, 979578)$. 
+
+\medskip
+
+{\bf 2.)} Use the Euclidean algorithm to find $\gcd(7469,2464)$. Then, substitute backwards to find integers $x$, $y$ such that $7469x + 2464y = \gcd(7469,2464)$.
+
+\medskip
+
+{\bf 3.)} Show that $\frac{55n + 7}{22n + 3}$ is in lowest terms for all $n \in \mathbb{Z}$.
+
+\medskip
+
+\noindent What makes the Euclidean algorithm possible is the existence of `division' in Euclidean domains like $\mathbb{Z}$, which is encapsulated by the following result:
+
+\medskip
+{\bf 4.)} Let $a, b \in \mathbb{Z}$, with $b \ne 0$. Prove that there exist unique integers $q$ and $r$ such that $a = qb + r$ and $0 \le r < |b|$.
+
+\smallskip
+({\bf Hint:} Consider the set $\{a - kb \mid k \in \mathbb{Z}\}$. Show that its smallest non-negative element is $r$.)
+
+\medskip
+
+\noindent A useful concept is the \emph{$p$-adic order} of a number (where $p$ is prime), which we denote $\nu_p(n)$. It is the largest exponent $a$ such that $p^a \mid n$. Intuitively, it is $p$'s exponent in $n$'s prime factorization.
+
+\medskip
+
+{\bf 5.)} Recall that the GCD is the largest number that divides both $a$ and $b$, and that the LCM is the smallest number that both $a$ and $b$ divide.
+
+\smallskip
+
+{(a)} Prove that $\nu_p (\text{gcd}(a,b)) = \min(\nu_p (a), \nu_p (b))$ for any prime $p$.
+
+\smallskip
+
+{(b)} Prove that $\nu_p (\text{lcm}(a,b)) = \max(\nu_p (a), \nu_p (b))$ for any prime $p$.
+
+\smallskip
+
+{(c)} Conclude that $ab = \text{gcd}(a,b) \cdot \text{lcm}(a,b)$.
+
+\medskip
+
+\section*{For Julian Salazar}
+
+\noindent We learned about the largest known prime in class. It is of the form $2^p - 1$, with $p$ prime. Primes of this form are called \emph{Mersenne primes}. We distinguish this form because of the following result:
+
+\medskip
+
+{\bf 6.)} Prove that if $a^n - 1$ is prime with $n > 1$, then $a = 2$ and $n$ is prime.
+
+\medskip
+
+\noindent Now, a quick exercise in divisibility:
+
+\medskip
+
+{\bf 7.)} Describe all $n > 1$ such that $n \mid (n-1)$!.
+
+\medskip
+
+\noindent Finally, use congruences to solve these last few problems:
+
+\medskip
+
+{\bf 8.)} Let $n$ be odd. What are the possible remainders when $n^2$ is divided by 8?
+
+\medskip
+
+{\bf 9.)} What is the last digit of $3^{4^5}$?
+
+\end{document}
