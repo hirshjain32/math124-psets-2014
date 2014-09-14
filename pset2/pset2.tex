@@ -14,62 +14,81 @@
 %\usepackage{fc}
 \usepackage{pifont}
 
-\title{Math 124, Problem Set 1}
+\title{Math 124, Problem Set 2}
 
 \begin{document}
 
 \maketitle
 
-\noindent {\bf Due: 12:00PM, September 19, 2014.}\\
+\noindent {\bf Due: 12:00PM, September 19, 2014. \emph{Late submissions will not be graded.}}\\
 \noindent {\bf Note:} Collaboration is permitted and encouraged. We only ask that you write up your solutions independently, and list your collaborators on your problem sets. Hard copies typed in \TeX\  are preferred. Please separate your submissions as indicated below.
 
 \section*{For Hirsh Jain}
 
-\medskip
-
-{\bf 1.)} Write a full proof that $a^{\phi(n)} \equiv 1 \pmod n$ for all $a$ such that $\gcd(a,n) = 1$ 
+\noindent We say that an arithmetic function $f: \mathbb{N} \to \mathbb{C}$ is a \emph{multiplicative function} if $f(mn) = f(m) f(n)$ when $(m,n) = 1$ (GCD is often denoted by parentheses only).
 
 \medskip
 
-{\bf 2.)} Show that for $n = \prod_{i=1}^k p_i^{e_i}$, $\phi(n) = \prod_{i=1}^k \left(1 - \frac{1}{p_i}\right)$
+{\bf 1.)} Show that for $n = \prod_{i=1}^k p_i^{e_i}$, \emph{Euler's totient function} $\phi(n) = n \prod_{i=1}^{k} \left(1 - \frac{1}{p_i}\right)$, and conclude that $\phi(n)$ is multiplicative.
 
 \medskip
 
-{\bf 3.)} Prove Wilson's theorem: for $p$ a prime, $(p-1)! \equiv -1 \pmod p$. 
+{\bf 2.)} Let $\psi$ be a multiplicative function. Prove that $\Psi(n) = \sum_{d|n} \psi(d)$ is also multiplicative, and conclude that  the sum-of-divisors $\sigma(n)$ and the number-of-divisors $d(n)$ are multiplicative.
 
 \medskip
 
-
-\medskip
-{\bf 4.)} 
-
+\noindent A \emph{primitive root mod $n$} is a number for which every $a$ such that $(a, n) = 1$ is congruent to a power of the primitive root (we say that a primitive root \emph{generates} the ring of units of $n$).
 
 \medskip
 
+{\bf 3.)} Using the fact that $2$ is a primitive root of $29$:
 
+\smallskip
 
-{\bf 5.)} 
+(a) Solve $x^4 \equiv 1 \pmod{29}$.
+
+\smallskip
+
+(b) Solve $1 + x + x^2 + x^3 \equiv 0 \pmod{29}$.
 
 \medskip
+
+\noindent In class, we learned about Fermat's little theorem and its generalization due to Euler.
+
+\medskip
+
+{\bf 4.)} Prove Euler's theorem, i.e., $a^{\phi(n)} \equiv 1 \pmod n$ for all $a$ such that $(a,n) = 1$.
 
 \section*{For Julian Salazar}
 
-\medskip
-
-{\bf 6.)} 
+\noindent Euler's and Fermat's results lead to very concrete numerical statements:
 
 \medskip
 
-
-{\bf 7.)} 
-
-\medskip
-
-
-{\bf 8.)} 
+{\bf 5.)} For which numbers $n > 1$ does $n^{40}$ not end in $...01$?
 
 \medskip
 
-{\bf 9.)}
+{\bf 6.)} Prove that $19 \mid 2^{2^{6k+2}} + 3$ for all non-negative $k$ (recall that $a^{b^c}$ is evaluated as $a^{(b^c)}$).
+
+\medskip
+ 
+\noindent Confirm your comfort with congruence classes:
+
+\medskip
+
+{\bf 7.)} Let $\{a_i\}$ be a set of $n$ integers. For $s > n$, show there exists $c$ such that $s \nmid a_i + c$ for all $a_i$.
+
+\medskip
+
+{\bf 8.)} Let $b, n \ge 1$. Show that the sequence
+\[
+b, b^b, b^{b^b}, b^{b^{b^b}}, \dotsc \pmod{n}
+\]
+(i.e., the sequence $a_1 = b, a_{i+1} = b^{a_{i}}$ modulo $n$) is eventually constant.
+
+\smallskip
+
+({\bf Hint:} Proceed by contradiction. For any $b$, suppose there exists $n$ where the sequence never becomes constant, and consider the smallest such $n$.)
 
 \end{document}
