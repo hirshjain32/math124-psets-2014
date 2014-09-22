@@ -1,0 +1,103 @@
+\documentclass[10pt]{amsart}
+
+\textwidth=15.5cm \oddsidemargin=0.5cm
+\evensidemargin=0.5cm
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+%\usepackage{fc}
+\usepackage{pifont}
+
+\title{Math 124, Problem Set 3}
+
+\begin{document}
+
+\maketitle
+
+\noindent {\bf Due: 12:00PM, September 26, 2014. \emph{Late submissions will not be graded.}}\\
+\noindent {\bf Note:} Collaboration is permitted and encouraged. We only ask that you write up your solutions independently, and list your collaborators on your problem sets. Hard copies typed in \TeX\  are preferred. Please separate your submissions as indicated below.
+
+\section*{For Hirsh Jain}
+
+\noindent We say that an arithmetic function $f: \mathbb{N} \to \mathbb{C}$ is a \emph{multiplicative function} if $f(mn) = f(m) f(n)$ when $(m,n) = 1$ (GCD is often denoted by parentheses only).
+
+\medskip
+
+{\bf 1.)} Recall that $\phi(n)$ (Euler's totient function) is defined as the number of integers $m \leq n$ such that $\gcd(m,n) = 1$. Prove that: $$\sum_{d\mid n} \phi(d) = n$$.
+
+\medskip
+
+{\bf 2.)} Using the primes $p = 47$ and $q = 31$, use RSA encryption to send us the message $m = 11$. 
+
+\medskip
+
+\noindent Consider the Mobius function $\mu$, where 
+
+$$\mu(n) = \begin{cases} -1 & n\text{ is square free and has an even number of prime factors} \\ 0 & n\text{ has a squared prime factor} \\ 1 & n \text{ is square free and has an odd number of prime factors} \end{cases}$$
+\medskip
+
+{\bf 3.)} 
+
+\smallskip
+
+(a) Prove that $\mu$ is multiplicative, i.e., that $\mu(ab) = \mu(a)\mu(b)$ for $\gcd(a,b) = 1$.
+
+\smallskip
+
+(b) Prove that $\sum_{d \mid n} \mu(d) = \begin{cases} 1 & n = 1 \\ 0 & n > 1 \end{cases}$. 
+
+\medskip
+
+\noindent In class, we learned about the statement of quadratic reciprocity. We call the symbol $a \choose p$ the {\emph Legendre symbol}, where $a \choose p$ is defined to be $1$ is $a$ is a quadratic residue mod $p$ and is $-1$ otherwise.
+
+\medskip
+
+{\bf 4.)} Prove that ${-1 \choose p} = 1 \implies p \equiv 1 \pmod 4$
+
+
+\section*{For Julian Salazar}
+
+\noindent Euler's and Fermat's results lead to very concrete numerical statements:
+
+\medskip
+
+
+{\bf 5.)} Compute the following Legendre symbols:
+
+\smallskip
+
+(a) ${-23 \choose 83}$
+
+\smallskip
+
+(b) ${119 \choose 139}$
+
+{\bf 6.)} Prove that $19 \mid 2^{2^{6k+2}} + 3$ for all non-negative $k$ (recall that $a^{b^c}$ is evaluated as $a^{(b^c)}$).
+
+\medskip
+ 
+\noindent Confirm your comfort with congruence classes:
+
+\medskip
+
+{\bf 7.)} Let $\{a_i\}$ be a set of $n$ integers. For $s > n$, show there exists $c$ such that $s \nmid a_i + c$ for all $a_i$.
+
+\medskip
+
+{\bf 8.)} Let $b, n \ge 1$. Show that the sequence
+\[
+b, b^b, b^{b^b}, b^{b^{b^b}}, \dotsc \pmod{n}
+\]
+(i.e., the sequence $a_1 = b, a_{i+1} = b^{a_{i}}$ modulo $n$) is eventually constant.
+
+\smallskip
+
+({\bf Hint:} Proceed by contradiction. For any $b$, suppose there exists $n$ where the sequence never becomes constant, and consider the smallest such $n$.)
+
+\end{document}
