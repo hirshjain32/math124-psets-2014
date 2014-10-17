@@ -1,0 +1,131 @@
+\documentclass[10pt]{amsart}
+
+\textwidth=15.5cm \oddsidemargin=0.5cm
+\evensidemargin=0.5cm
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,   
+    urlcolor=blue,
+}
+
+\def\[#1\]{\begin{align*}#1\end{align*}}
+
+\title{Math 124, Problem Set 3 (Solutions)}
+
+\begin{document}
+
+\maketitle
+
+\noindent {\bf For the problem set due September 26, 2014:}\\
+
+{\bf 1.)} Here is a proof that is both slick and revelatory: Consider the $n$ fractions $\frac{1}{n}, \dotsc, \frac{n}{n}$. Reducing to lowest terms will leave the various divisors of $n$ in the denominators. For each divisor $d$, exactly $\phi(d)$ of these reduced fractions will have $d$ in the denominator. To see why, note that $d$ of the $n$ fractions are equivalent to $\frac{1}{d}, \dotsc, \frac{d}{d}$, exactly $\phi(d)$ of which will not further reduce and thus have a final denominator of $d$. This partitions the $n$ numbers, giving $\sum_{d \mid n} \phi(d) = n$.
+
+\medskip
+
+{\bf 2.)} Answers may vary:
+
+\smallskip
+
+a) The public key is composed of two parts: the modulus $n = pq = (47)(31) = 1457$, and a number $e$ coprime to and less than $\phi(n) = (p-1)(q-1) = 1380$, e.g., 7.
+
+\smallskip
+
+b) Person B sends the value $m^e \pmod{n}$, which in this case is $11^{7} \equiv 1253 \pmod{1457}$.
+
+\medskip
+
+{\bf 3.)} Gauss' lemma states that in this case, ${2 \choose p} = (-1)^{\mu}$, where $\mu$ is the number of $2, 2 \cdot 2, \dotsc, ((p-1)/2) \cdot 2$ which are greater than $\frac{p-1}{2}$. Let $m$ be determined by $2m \le (p-1)/2$ and $2(m+1) > (p-1)/2$. Then $\mu = (p-1)/2 - m$.
+
+\begin{itemize}
+\item $p = 8k+1$ gives $(p-1)/2 = 4k$ and $m = 2k$. Then $\mu = 2k$, so ${2 \choose p} = +1$.
+\item $p = 8k+3$ gives $(p-1)/2 = 4k+1$ and $m = 2k$. Then $\mu = 2k+1$, so ${2 \choose p} = -1$.
+\item $p = 8k+5$ gives $(p-1)/2 = 4k+2$ and $m = 2k+1$. Then $\mu = 2k+1$, so ${2 \choose p} = -1$.
+\item $p = 8k+7$ gives $(p-1)/2 = 4k+3$ and $m = 2k+1$. Then $\mu = 2k+2$, so ${2 \choose p} = +1$.
+\end{itemize}
+
+\medskip
+
+{\bf 4.)} Applying Question 3, the values of ${-1 \choose p}$, and multiplicativity:
+
+\smallskip
+
+a) ${-23 \choose 83} = {60 \choose 83} = {2 \choose 83} {2 \choose 83} {3 \choose 83} {5 \choose 83} = {3 \choose 83} {5 \choose 83} = - {83 \choose 3} {83 \choose 5} = - {2 \choose 3} {3 \choose 5} = -(-1)(-1) = -1$.
+
+\smallskip
+
+b) ${119 \choose 139} = {7 \choose 139}  {17 \choose 139} = -{139 \choose 7} {139 \choose 17} = -{6 \choose 7} {3 \choose 17} = -{-1 \choose 7} {17 \choose 3} = -(-1) {2 \choose 3} = -1$.
+
+\smallskip
+
+\textbf{Remark.} Proceeding with ${119 \choose 139} = -{139 \choose 119}$ is not valid since $119 = 7 \times 17$, i.e., not prime.
+
+\medskip
+
+{\bf 5.)} Implicitly, our divisors in the summation notation are comprehended over $\mathbb{N}$.
+
+\smallskip
+
+a) Rephrasing the sum as the more ``symmetric'' expression
+\[
+(f * g)(n) = \sum_{dd' = n} f(d)g(d')
+\]
+makes commutativity obvious.
+
+\smallskip
+
+b) $(f * id)(n)  = \sum_{d \mid n} f(d)id\left(\frac{n}{d}\right)$. The $id$ factor is only non-zero when $\frac{n}{d} = 1$, i.e., $d = n$. Thus the sum collapses to $f(n)$ (since commutativity is established, we do not need to verify that it is a left identity).
+
+\smallskip
+
+c) By part (a), we have
+\[
+(f * (g * h))(n) &= \sum_{aa'=n} f(a) (g * h)(a') = \sum_{aa' = n} f(a) \left(\sum_{bc = a'} g(b)h(c)\right)\\
+&= \sum_{aa' = n}\sum_{bc = a'} f(a)g(b)h(c) = \sum_{abc = n} f(a)g(b)h(c).
+\]
+Similarly,
+\[
+((f * g) * h)(n) &= \sum_{c'c = n} (f * g)(c') h(c) = \sum_{c'c = n} \left(\sum_{ab = c'} f(a)g(b) \right) h(c)\\
+&= \sum_{c'c = n}\sum_{ab = c'} f(a)g(b)h(c) = \sum_{abc = n} f(a)g(b)h(c),
+\]
+and thus $f * (g * h) = (f * g) * h$.
+
+\medskip
+
+{\bf 6.)} Note that for square-free numbers $n$, the last two cases can be folded into $(-1)^k$ where $k$ is the number of (distinct) prime factors of $n$.
+
+\smallskip
+
+a) Let $(m,n) = 1$. If either is not square-free, then the product $mn$ is not square-free and $\mu(mn) = \mu(m)\mu(n) = 0$. Otherwise they are both square-free. Let $m$ have $a$ distinct prime factors and $n$ have $b$ distinct prime factors. These sets of prime factors do not overlap. Then $\mu(m)\mu(n) = (-1)^a (-1)^b = (-1)^{a+b} = \mu(mn)$.
+
+\smallskip
+
+b) Note that $\sum_{d \mid n} \mu(d) = \mu(1) = 1$, since $1$ has an even (i.e., zero) number of prime factors. Let $n > 1$. Then we can write $n = p_1^{a_1} \dotsb p_k^{a_k}$. The square-free divisors of $n$ are of the form $p_1^{\epsilon_1} \dotsb p_k^{\epsilon_k}$ where $\epsilon_i \in \{0, 1\}$. Hence
+\[
+\sum_{d \mid n} \mu(d) = \sum_{(\epsilon_1, \dotsc, \epsilon_k) \in \{0, 1\}^k} \mu(p_1^{\epsilon_1} \dotsb p_k^{\epsilon_k}).
+\]
+Each summand is equal to $(-1)^m$, where $m$ is the number of non-zero $\epsilon_i$. Decompose the sum into the number of ways that no $\epsilon_i$ is non-zero, that one $\epsilon_i$ is non-zero, etc. Therefore our sum is equal to
+\[
+{k \choose 0} - {k \choose 1} + {k \choose 2} - \dotsb + (-1)^k = (1 - 1)^k = 0,
+\]
+following from the binomial theorem.
+
+\smallskip
+
+c) $\mu * F = \mu * (f * I) = \mu * f * I = f * (\mu * I) = f * id = f$.
+
+\smallskip
+
+d) Let $x$ denote the function such that $x(n) = n$. In Question 1, we proved that $\phi * I = x$. Hence $x * \mu = (\phi * I) * \mu = \phi * (I * \mu) = \phi * id = \phi$.
+
+\smallskip
+
+\textbf{Remark.} It's amazing how observing underlying algebraic structure makes the reasoning behind otherwise messy symbol-pushing transparent.
+
+\end{document}

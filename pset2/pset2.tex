@@ -29,7 +29,9 @@
 
 \medskip
 
-{\bf 1.)} Show that for $n = \prod_{i=1}^k p_i^{e_i}$, \emph{Euler's totient function} $\phi(n) = n \prod_{i=1}^{k} \left(1 - \frac{1}{p_i}\right)$, and conclude that $\phi(n)$ is multiplicative.
+{\bf 1.)} Show that for $n = \prod_{i=1}^k p_i^{e_i}$, \emph{Euler's totient function} $\phi(n)$ equals $n \prod_{i=1}^{k} \left(1 - \frac{1}{p_i}\right)$. Hence, conclude that $\phi(n)$ is multiplicative.
+
+({\bf Hint:} This is an opposite approach to the proof in class. Take $n$ and subtract off the number of multiples of every $p_i$, but avoid double-counting).
 
 \medskip
 
@@ -37,7 +39,7 @@
 
 \medskip
 
-\noindent A \emph{primitive root mod $n$} is a number for which every $a$ such that $(a, n) = 1$ is congruent to a power of the primitive root (we say that a primitive root \emph{generates} the ring of units of $n$).
+\noindent A \emph{primitive root mod $n$} is a number for which every $a$ such that $(a, n) = 1$ is congruent to a power of the primitive root (we say that a primitive root \emph{generates} the group of units of $n$).
 
 \medskip
 
@@ -45,11 +47,11 @@
 
 \smallskip
 
-(a) Solve $x^4 \equiv 1 \pmod{29}$.
+(a) Solve $x^7 \equiv 1 \pmod{29}$.
 
 \smallskip
 
-(b) Solve $1 + x + x^2 + x^3 \equiv 0 \pmod{29}$.
+(b) Solve $\sum_{k=0}^6 x^k \equiv 0 \pmod{29}$.
 
 \medskip
 
@@ -57,7 +59,7 @@
 
 \medskip
 
-{\bf 4.)} Prove Euler's theorem, i.e., $a^{\phi(n)} \equiv 1 \pmod n$ for all $a$ such that $(a,n) = 1$.
+{\bf 4.)} Prove Euler's theorem, i.e., $a^{\phi(n)} \equiv 1 \pmod n$ for all $a$ such that $(a,n) = 1$ (it suffices to explicate the proof from class).
 
 \section*{For Julian Salazar}
 

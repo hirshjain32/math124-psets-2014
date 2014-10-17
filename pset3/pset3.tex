@@ -25,50 +25,47 @@
 
 \section*{For Hirsh Jain}
 
-\noindent We say that an arithmetic function $f: \mathbb{N} \to \mathbb{C}$ is a \emph{multiplicative function} if $f(mn) = f(m) f(n)$ when $(m,n) = 1$ (GCD is often denoted by parentheses only).
+\noindent We saw that Euler's totient function $\phi(n)$ plays a role in the RSA cryptosystem.
 
 \medskip
 
-{\bf 1.)} Recall that $\phi(n)$ (Euler's totient function) is defined as the number of integers $m \leq n$ such that $\gcd(m,n) = 1$. Prove that: $$\sum_{d\mid n} \phi(d) = n$$.
+{\bf 1.)} Recall that $\phi(n)$ is defined as the number of integers $1 \le m \le n$ such that $\gcd(m,n) = 1$. Prove that
+\[
+\sum_{d\mid n} \phi(d) = n.
+\]
 
 \medskip
 
-{\bf 2.)} Using the primes $p = 47$ and $q = 31$, use RSA encryption to send us the message $m = 11$. 
-
-\medskip
-
-\noindent Consider the Mobius function $\mu$, where 
-
-$$\mu(n) = \begin{cases} -1 & n\text{ is square free and has an even number of prime factors} \\ 0 & n\text{ has a squared prime factor} \\ 1 & n \text{ is square free and has an odd number of prime factors} \end{cases}$$
-\medskip
-
-{\bf 3.)} 
+{\bf 2.)} You are Person A, and you want Person B to send you messages via RSA encryption. You choose $p = 47$ and $q = 31$ to be your ``large'' primes.
 
 \smallskip
 
-(a) Prove that $\mu$ is multiplicative, i.e., that $\mu(ab) = \mu(a)\mu(b)$ for $\gcd(a,b) = 1$.
+(a) What numbers do you share with Person B? There are many valid answers.
 
 \smallskip
 
-(b) Prove that $\sum_{d \mid n} \mu(d) = \begin{cases} 1 & n = 1 \\ 0 & n > 1 \end{cases}$. 
+(b) As person B, use these numbers (Person A's $\emph{public key}$) to encode $m = 11$.
 
 \medskip
 
-\noindent In class, we learned about the statement of quadratic reciprocity. We call the symbol $a \choose p$ the {\emph Legendre symbol}, where $a \choose p$ is defined to be $1$ is $a$ is a quadratic residue mod $p$ and is $-1$ otherwise.
+\noindent In class, we learned about the statement of quadratic reciprocity. We call the symbol $a \choose p$ the \emph{Legendre symbol}, where for odd prime $p$,
+\[
+{a \choose p} = \begin{cases} 0 & \text{ if $a \equiv 0$ (mod $p$)} \\ +1 & \text{ if $a$ is a quadratic residue (mod $p$)} \\ -1 & \text{ if $a$ is a quadratic non-residue (mod $p$).} \end{cases}
+\]
 
 \medskip
 
-{\bf 4.)} Prove that ${-1 \choose p} = 1 \implies p \equiv 1 \pmod 4$
-
-
-\section*{For Julian Salazar}
-
-\noindent Euler's and Fermat's results lead to very concrete numerical statements:
+{\bf 3.)} Show that
+\[
+{2 \choose p} = \begin{cases}
++1 & \text{if } p \equiv 1, 7 \text{ (mod $8$)}\\
+-1 & \text{if } p \equiv 3, 5 \text{ (mod $8$)}.
+\end{cases}
+\]
 
 \medskip
 
-
-{\bf 5.)} Compute the following Legendre symbols:
+{\bf 4.)} Compute the following Legendre symbols:
 
 \smallskip
 
@@ -78,26 +75,68 @@ $$\mu(n) = \begin{cases} -1 & n\text{ is square free and has an even number of p
 
 (b) ${119 \choose 139}$
 
-{\bf 6.)} Prove that $19 \mid 2^{2^{6k+2}} + 3$ for all non-negative $k$ (recall that $a^{b^c}$ is evaluated as $a^{(b^c)}$).
+\section*{For Julian Salazar}
 
-\medskip
- 
-\noindent Confirm your comfort with congruence classes:
-
-\medskip
-
-{\bf 7.)} Let $\{a_i\}$ be a set of $n$ integers. For $s > n$, show there exists $c$ such that $s \nmid a_i + c$ for all $a_i$.
-
-\medskip
-
-{\bf 8.)} Let $b, n \ge 1$. Show that the sequence
+\noindent Last time, we defined arithmetic functions as functions $\mathbb{Z}^+ \to \mathbb{C}$. Define the \emph{Dirichlet convolution} of two arithmetic functions as
 \[
-b, b^b, b^{b^b}, b^{b^{b^b}}, \dotsc \pmod{n}
+(f * g)(n) := \sum_{d \mid n} f(d) g\left(\frac{n}{d}\right).
 \]
-(i.e., the sequence $a_1 = b, a_{i+1} = b^{a_{i}}$ modulo $n$) is eventually constant.
+It turns out that this operation turns the arithmetic functions into a $\emph{commutative ring}$.
+
+\medskip
+
+{\bf 5.)} Let $f, g, h$ be arbitrary arithmetic functions.
 
 \smallskip
 
-({\bf Hint:} Proceed by contradiction. For any $b$, suppose there exists $n$ where the sequence never becomes constant, and consider the smallest such $n$.)
+(a) Briefly explain why this operation is commutative, i.e., $f * g = g * f$.
+
+\smallskip
+
+(b) Define $id$ as the arithmetic function such that $id(1) = 1$ and $id(n) = 0$ for $n > 1$. Verify that it is the identity, i.e., $f * id = f$.
+
+\smallskip
+
+(c) Verify associativity: $f * (g * h) = (f * g) * h$.
+
+\medskip
+
+\noindent We now explore the M{\"o}bius function, which holds a distinguished place in the arithmetic functions.
+
+\medskip
+
+{\bf 6.)} A number is \emph{square-free} if it is not divisible by a perfect square greater than 1. Define the \emph{M{\"o}bius function $\mu$} as 
+
+\[
+\mu(n) = \begin{cases} 
+ 0 & n\text{ is not square-free} \\
+-1 & n\text{ is square-free and has an odd number of prime factors} \\ +1 & n \text{ is square-free and has an even number of prime factors.} \end{cases}
+\]
+
+\smallskip
+
+(a) Prove that $\mu$ is multiplicative, i.e., that $\mu(ab) = \mu(a)\mu(b)$ for $\gcd(a,b) = 1$.
+
+\smallskip
+
+(b) Define the `conventional identity' $I$ as $I(n) = 1$ for all $n$. Prove that
+\[
+\sum_{d \mid n} \mu(d) = \begin{cases} 1 & n = 1 \\ 0 & n > 1, \end{cases}
+\]
+i.e., $I * \mu = id$ (we say $I$ and $\mu$ are \emph{inverses}).
+
+\smallskip
+
+(c) Let $F(n) = \sum_{d \mid n} f(d)$, i.e., $F = f * I$. Hence, prove the \emph{M{\"o}bius inversion theorem}:
+\[
+f(n) = \sum_{d \mid n} \mu(d) F\left(\frac{n}{d}\right).
+\]
+
+\smallskip
+
+(d) Use this theorem and Question 1 to deduce
+\[
+\phi(n) = n \sum_{d \mid n} \frac{\mu(d)}{d}.
+\]
 
 \end{document}

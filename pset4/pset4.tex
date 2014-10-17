@@ -1,0 +1,77 @@
+\documentclass[10pt]{amsart}
+
+\textwidth=15.5cm \oddsidemargin=0.5cm
+\evensidemargin=0.5cm
+\usepackage{amsmath}
+\usepackage{amsxtra}
+\usepackage{amscd}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{eucal}
+\usepackage[all]{xy}
+\usepackage{graphicx}
+%\usepackage{fc}
+\usepackage{pifont}
+
+\title{Math 124, Problem Set 4}
+
+\begin{document}
+
+\maketitle
+
+\noindent {\bf Due: 12:00PM, October 10, 2014. \emph{Late submissions will not be graded.}}\\
+\noindent {\bf Note:} Collaboration is permitted and encouraged. We only ask that you write up your solutions independently, and list your collaborators on your problem sets. Hard copies typed in \TeX\  are preferred. Please separate your submissions as indicated below.
+
+\medskip
+
+\noindent {\bf Notation:} Davenport uses a non-standard square-bracket notation (that we also adopt in this class) for the numerators and denominators of the convergents. This is separate from the standard square-bracket notation for continued fractions, where $[3; \overline{1, 2}]$ would denote:
+
+\[
+3 + \cfrac{1}{1+\cfrac{1}{2+\cfrac{1}{1+\cfrac{1}{2+\dotsb}}}}
+\]
+
+\medskip
+
+\section*{For Hirsh Jain}
+
+{\bf 1.)} Using the manner of the Euclidean algorithm to show your work, express these as continued fractions: $\frac{155}{131}$, $\frac{782}{99}$.
+
+\medskip
+
+\noindent Let $F_n$ denote the \emph{$n$-th Fibonacci number}, where $F_0 = 0$, $F_1 = 1$, and $F_{n+2} = F_{n+1} + F_n$.
+
+\medskip
+
+{\bf 2.)} Find and prove the general form of the continued fraction of $\frac{F_{n+1}}{F_n}$ for $n > 0$.
+
+\medskip
+
+{\bf 3.)} Find and prove the general form of the continued fraction of $\frac{F_{n+1}^2}{F_n^2}$ for $n > 0$.
+
+\section*{For Julian Salazar}
+
+\noindent A \emph{generalized continued fraction} does not require the numerators to be 1.
+
+\medskip
+
+{\bf 4.)} Derive closed expressions for both
+
+\[
+1 + \cfrac{2}{3+\cfrac{2}{1+\cfrac{2}{3+\dotsb}}} \quad \quad \text{and} \quad \quad 1 + \cfrac{x-1}{2+\cfrac{x-1}{2+\cfrac{x-1}{2+\dotsb}}}
+\]
+
+\medskip
+
+\noindent Given a continued fraction $\alpha = [a_0; a_1, a_2, \dotsc]$, we call $[a_0; a_1, a_2, \dotsc, a_k]$ the \emph{$k$-th convergent} of $\alpha$.
+
+\medskip
+
+{\bf 5.)} Prove that the subsequence of odd-index convergents is decreasing.
+
+\medskip
+
+{\bf 6.)} Find the general solution to $91x - 55y = 1$ using the convergents of $\frac{91}{55}$ (see Davenport). Show your work.
+
+
+\end{document}
